@@ -12,8 +12,35 @@ buildscript {
     }
 }
 
-allprojects {
+subprojects {
     repositories {
         jcenter()
+        maven {
+            url "${System.env.HOME}/.m2/repository"
+        }
     }
+
+    project.plugins.whenPluginAdded { plugin ->
+        if ("com.android.build.gradle.AppPlugin".equals(plugin.class.name)) {
+            project.android.dexOptions.preDexLibraries = rootProject.ext.preDexLibs
+        } else if ("com.android.build.gradle.LibraryPlugin".equals(plugin.class.name)) {
+            project.android.dexOptions.preDexLibraries = rootProject.ext.preDexLibs
+        }
+    }
+}
+
+// http://www.gradle.org/docs/current/dsl/org.gradle.api.plugins.ExtraPropertiesExtension.html
+project.ext {
+    compileSdkVersion = 21
+    buildToolsVersion = '22.0.1'
+
+    // see http://tools.android.com/tech-docs/new-build-system/tips#TOC-Improving-Build-Server-performance.
+    // CIサーバなどでは -PdisablePreDex をつける。 preDexが省略されてビルドが速くなる
+    preDexLibs = !project.hasProperty('disablePreDex')
+
+    supportPackageVersion = '22.2.1'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
 }
