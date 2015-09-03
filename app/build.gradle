@@ -37,16 +37,22 @@ android {
     buildTypes {
         debug {
             // デバッグモード許可
-            debuggable true
-            zipAlign true
+            multiDexEnabled false
+            jniDebuggable false
+            renderscriptDebuggable false
             applicationIdSuffix ".debug"
             versionNameSuffix '-dev'
         }
         release {
-            debuggable false
-            zipAlign true
-            runProguard true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            shrinkResources false // minifyEnabled true の指定必須
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+            proguardFile file('proguard-rules.pro')
+
+            multiDexEnabled false
+
+            jniDebuggable false
+            renderscriptDebuggable false
             signingConfig signingConfigs.release
         }
     }
