@@ -56,7 +56,7 @@ android {
             signingConfig signingConfigs.release
         }
     }
-    produceFlavors {
+    productFlavors {
         develop {
             applicationId "${PACKAGE_NAME}.develop"
         }
