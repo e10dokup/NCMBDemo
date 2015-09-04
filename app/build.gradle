@@ -76,5 +76,26 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile "com.android.support:appcompat-v7:${supportPackageVersion}"
+    compile "com.android.support:preference-v7:${supportPackageVersion}"
+    compile "com.android.support:design:${supportPackageVersion}"
+    compile "com.android.support:percent:${supportPackageVersion}"
+    compile "com.android.support:support-annotations:${supportPackageVersion}"
+
+    compile "com.jakewharton:butterknife:7.0.1"
+    apt "com.jakewharton:butterknife:7.0.1"
+
+    compile "com.squareup.dagger:dagger:1.2.2"
+    apt "com.squareup.dagger:dagger-compiler:1.2.2"
+
+    compile "net.vvakame:jsonpullparser-core:1.6.2"
+    apt "net.vvakame:jsonpullparser-apt:1.6.2"
+
+    compile "de.greenrobot:eventbus:2.4.0"
+
+    compile "com.squareup.okio:okio:1.5.0"
+    compile "com.squareup.okhttp:okhttp:2.4.0"
+    compile "com.squareup.okhttp:okhttp-urlconnection:2.4.0"
+
+    compile "com.squareup.retrofit:retrofit:1.9.0"
 }
