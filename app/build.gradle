@@ -37,7 +37,6 @@ android {
     }
     buildTypes {
         debug {
-            // デバッグモード許可
             multiDexEnabled false
             jniDebuggable false
             renderscriptDebuggable false
