@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">AndroidQuickTemplate</string>
+    <string name="app_name">NCMBDemo</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="ncmb_app_key">4adbf6aa155bf13e5236ecda867f3af53cf9970a68f28a0e3208399d317111ba</string>
+    <string name="ncmb_cli_key">2f8118af803be6b2e197b18040d0ffbc94fae922aa7511bd935440b350d5168b</string>
+
+    <string name="label_user_id">id</string>
+    <string name="label_password">password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_signup">Sign Up</string>
+    <string name="btn_goto_signup">Goto Sign Up</string>
+    <string name="btn_goto_login">Goto Login</string>
 </resources>

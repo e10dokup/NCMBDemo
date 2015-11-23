@@ -1,10 +1,9 @@
-package info.e10dokup.androidquicktemplate.core;
+package info.e10dokup.ncmbdemo.core;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 
 import dagger.Module;
-import dagger.Provides;
 
 /**
  * Created by e10dokup on 2015/10/09

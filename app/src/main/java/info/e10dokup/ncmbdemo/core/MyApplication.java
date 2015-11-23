@@ -1,4 +1,4 @@
-package info.e10dokup.androidquicktemplate.core;
+package info.e10dokup.ncmbdemo.core;
 
 import android.app.Application;
 
