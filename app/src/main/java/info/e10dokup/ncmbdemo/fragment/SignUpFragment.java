@@ -68,6 +68,7 @@ public class SignUpFragment extends BaseFragment {
                         Log.d(TAG, e.getCode());
                     } else {
                         Toast.makeText(getBaseActivity(), "Sign up succeeded!", Toast.LENGTH_SHORT).show();
+                        getBaseActivity().replaceFragment(new MainFragment(), false);
                     }
                 }
             });
