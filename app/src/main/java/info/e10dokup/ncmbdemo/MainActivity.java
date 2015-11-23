@@ -3,6 +3,7 @@ package info.e10dokup.ncmbdemo;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.nifty.cloud.mb.core.NCMB;
 import com.nifty.cloud.mb.core.NCMBUser;
@@ -26,8 +27,7 @@ public class MainActivity extends BaseActivity {
 
         NCMB.initialize(this, getString(R.string.ncmb_app_key), getString(R.string.ncmb_cli_key));
 
-        NCMBUser user = NCMBUser.getCurrentUser();
-        if(user.getUserName() == null) {
+        if(NCMBUser.getSessionToken() == null) {
             replaceFragment(new SignUpFragment(), false);
         } else {
             replaceFragment(new MainFragment(), false);
