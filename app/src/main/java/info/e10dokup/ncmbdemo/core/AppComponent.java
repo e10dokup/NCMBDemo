@@ -10,8 +10,4 @@ import info.e10dokup.ncmbdemo.fragment.SignUpFragment;
 )
 public interface AppComponent {
     void inject(MainActivity mainActivity);
-
-    void inject(LoginFragment loginFragment);
-
-    void inject(SignUpFragment signUpFragment);
 }

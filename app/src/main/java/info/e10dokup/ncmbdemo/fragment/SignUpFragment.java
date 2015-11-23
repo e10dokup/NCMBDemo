@@ -41,11 +41,6 @@ public class SignUpFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
 
-        { // Inject values
-            MyApplication app = (MyApplication) getBaseActivity().getMyApplication();
-            app.getComponent().inject(this);
-        }
-
         ButterKnife.bind(this, view);
         mSignUpButton.setOnClickListener(mOnClickListener);
         mGotoLoginButton.setOnClickListener(mGotoButtonListener);
@@ -72,7 +67,6 @@ public class SignUpFragment extends BaseFragment {
                     }
                 }
             });
-
         }
     };
 
